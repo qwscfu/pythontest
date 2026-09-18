@@ -1,1 +1,946 @@
-_ = (lambda __: __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]))); exec(_('=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'))
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import re
+import json
+import time
+import base64
+import random
+import string
+import shutil
+import platform
+import signal
+import threading
+import subprocess
+import datetime
+import requests
+from pathlib import Path
+from urllib.parse import urlparse, quote
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+from cryptography.hazmat.primitives.asymmetric import x25519, ec
+from cryptography.hazmat.primitives import serialization, hashes
+from cryptography import x509
+from cryptography.x509.oid import NameOID
+
+# =========================== 环境变量 ===========================
+UPLOAD_URL = os.environ.get('UPLOAD_URL', '')          # 节点或订阅上传地址
+PROJECT_URL = os.environ.get('PROJECT_URL', '')        # 项目url,用于自动保活或上传订阅
+AUTO_ACCESS = os.environ.get('AUTO_ACCESS', '').lower() == 'true'  # true开启自动保活,默认关闭
+FILE_PATH = os.environ.get('FILE_PATH', '.cache')      # 运行目录,sub.txt保存路径
+SUB_PATH = os.environ.get('SUB_PATH', 'sub')           # 订阅token
+UUID = os.environ.get('UUID', '')  # UUID
+KOMARI_SERVER = os.environ.get('KOMARI_SERVER', '')    # komari面板地址,如 https://panel.xxx.com
+KOMARI_TOKEN = os.environ.get('KOMARI_TOKEN', '')      # komari agent token
+ARGO_DOMAIN = os.environ.get('ARGO_DOMAIN', '')        # Argo固定隧道域名,留空使用临时隧道
+ARGO_AUTH = os.environ.get('ARGO_AUTH', '')            # Argo固定隧道token或json,留空使用临时隧道
+ARGO_PORT = int(os.environ.get('ARGO_PORT', '8011'))   # Argo隧道端口
+S5_PORT = os.environ.get('S5_PORT', '')                # socks5端口,留空不开启
+HY2_PORT = os.environ.get('HY2_PORT', '')              # hy2端口,留空不开启
+REALITY_PORT = os.environ.get('REALITY_PORT', '')      # reality端口,留空不开启
+CFIP = os.environ.get('CFIP', 'cf.877774.xyz')         # 优选ip或域名
+CFPORT = int(os.environ.get('CFPORT', '443'))          # 优选端口
+NAME = os.environ.get('NAME', '')                      # 节点名称
+CHAT_ID = os.environ.get('CHAT_ID', '')                # Telegram chat_id
+BOT_TOKEN = os.environ.get('BOT_TOKEN', '')            # Telegram bot_token
+PORT = int(os.environ.get('PORT') or '3000')           # http订阅端口
+SHOW_LOG = os.environ.get('SHOW_LOG', 'disable').lower() not in ('false', 'disable', 'no')  # 是否显示日志,默认不显示，no/false/disable 不显示
+
+# =========================== 日志控制 ===========================
+def log(msg):
+    if SHOW_LOG:
+        print(msg)
+
+def log_error(msg):
+    if SHOW_LOG:
+        print(msg, file=sys.stderr)
+
+def always_log(msg):
+    sys.stdout.write(msg + '\n')
+    sys.stdout.flush()
+
+# =========================== 全局变量 ===========================
+private_key = ''
+public_key = ''
+sub_txt_content = ''
+FILE_PATH = Path(FILE_PATH).resolve()
+
+def generate_random_name(length=6):
+    return ''.join(random.choices(string.ascii_lowercase, k=length))
+
+web_name = generate_random_name()
+bot_name = generate_random_name()
+komari_name = generate_random_name()
+
+web_path = FILE_PATH / web_name
+bot_path = FILE_PATH / bot_name
+komari_path = FILE_PATH / komari_name
+sub_path = FILE_PATH / 'sub.txt'
+list_path = FILE_PATH / 'list.txt'
+boot_log_path = FILE_PATH / 'boot.log'
+config_path = FILE_PATH / 'config.json'
+cert_path = FILE_PATH / 'cert.pem'
+key_path = FILE_PATH / 'private.key'
+
+# =========================== 端口检查 ===========================
+def is_valid_port(port):
+    try:
+        if port is None or port == '':
+            return False
+        port_num = int(port)
+        if port_num < 1 or port_num > 65535:
+            return False
+        return True
+    except (ValueError, TypeError):
+        return False
+
+# =========================== X25519 密钥对生成 ===========================
+def generate_x25519_keypair():
+    """使用 cryptography 库生成 X25519 密钥对,返回 base64url 编码的私钥和公钥"""
+    priv = x25519.X25519PrivateKey.generate()
+    pub = priv.public_key()
+    priv_bytes = priv.private_bytes(
+        encoding=serialization.Encoding.Raw,
+        format=serialization.PrivateFormat.Raw,
+        encryption_algorithm=serialization.NoEncryption()
+    )
+    pub_bytes = pub.public_bytes(
+        encoding=serialization.Encoding.Raw,
+        format=serialization.PublicFormat.Raw
+    )
+    return {
+        'privateKey': base64.urlsafe_b64encode(priv_bytes).decode().rstrip('='),
+        'publicKey': base64.urlsafe_b64encode(pub_bytes).decode().rstrip('=')
+    }
+
+def generate_or_load_keypair():
+    """生成或加载 X25519 密钥对"""
+    global private_key, public_key
+    key_file_path = FILE_PATH / 'key.txt'
+    if key_file_path.exists():
+        content = key_file_path.read_text(encoding='utf-8')
+        priv_match = re.search(r'PrivateKey:\s*(.*)', content)
+        pub_match = re.search(r'PublicKey:\s*(.*)', content)
+        if priv_match and pub_match:
+            private_key = priv_match.group(1).strip()
+            public_key = pub_match.group(1).strip()
+            log(f'Private Key: {private_key}')
+            log(f'Public Key: {public_key}')
+            return
+    keypair = generate_x25519_keypair()
+    private_key = keypair['privateKey']
+    public_key = keypair['publicKey']
+    key_file_path.write_text(
+        f'PrivateKey: {private_key}\nPublicKey: {public_key}\n', encoding='utf-8')
+    log(f'Private Key: {private_key}')
+    log(f'Public Key: {public_key}')
+
+# =========================== TLS 证书生成 ===========================
+FALLBACK_EC_KEY = (
+    '-----BEGIN EC PARAMETERS-----\n'
+    'BggqhkjOPQMBBw==\n'
+    '-----END EC PARAMETERS-----\n'
+    '-----BEGIN EC PRIVATE KEY-----\n'
+    'MHcCAQEEIM4792SEtPqIt1ywqTd/0bYidBqpYV/++siNnfBYsdUYoAoGCCqGSM49\n'
+    'AwEHoUQDQgAE1kHafPj07rJG+HboH2ekAI4r+e6TL38GWASANnngZreoQDF16ARa\n'
+    '/TsyLyFoPkhLxSbehH/NBEjHtSZGaDhMqQ==\n'
+    '-----END EC PRIVATE KEY-----\n'
+)
+
+FALLBACK_CERT = (
+    '-----BEGIN CERTIFICATE-----\n'
+    'MIIBejCCASGgAwIBAgIUfWeQL3556PNJLp/veCFxGNj9crkwCgYIKoZIzj0EAwIw\n'
+    'EzERMA8GA1UEAwwIYmluZy5jb20wHhcNMjUwOTE4MTgyMDIyWhcNMzUwOTE2MTgy\n'
+    'MDIyWjATMREwDwYDVQQDDAhiaW5nLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\n'
+    'A0IABNZB2nz49O6yRvh26B9npACOK/nuky9/BlgEgDZ54Ga3qEAxdegEWv07Mi8h\n'
+    'aD5IS8Um3oR/zQRIx7UmRmg4TKmjUzBRMB0GA1UdDgQWBBTV1cFID7UISE7PLTBR\n'
+    'BfGbgkrMNzAfBgNVHSMEGDAWgBTV1cFID7UISE7PLTBRBfGbgkrMNzAPBgNVHRMB\n'
+    'Af8EBTADAQH/MAoGCCqGSM49BAMCA0cAMEQCIAIDAJvg0vd/ytrQVvEcSm6XTlB+\n'
+    'eQ6OFb9LbLYL9f+sAiAffoMbi4y/0YUSlTtz7as9S8/lciBF5VCUoVIKS+vX2g==\n'
+    '-----END CERTIFICATE-----\n'
+)
+
+def ensure_tls_certificates(cert_file, key_file):
+    """生成自签名 TLS 证书 (用于 Hysteria2)"""
+    if cert_file.exists() and key_file.exists():
+        return
+    cert_file.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        ec_private_key = ec.generate_private_key(ec.SECP256R1())
+        subject = issuer = x509.Name([
+            x509.NameAttribute(NameOID.COMMON_NAME, 'bing.com')
+        ])
+        cert_obj = (
+            x509.CertificateBuilder()
+            .subject_name(subject)
+            .issuer_name(issuer)
+            .public_key(ec_private_key.public_key())
+            .serial_number(x509.random_serial_number())
+            .not_valid_before(datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None))
+            .not_valid_after((datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=3650)).replace(tzinfo=None))
+            .sign(ec_private_key, hashes.SHA256())
+        )
+        key_pem = ec_private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.TraditionalOpenSSL,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        cert_pem = cert_obj.public_bytes(serialization.Encoding.PEM)
+        key_file.write_bytes(key_pem)
+        cert_file.write_bytes(cert_pem)
+    except Exception as e:
+        log_error(f'Failed to generate TLS certificate: {e}')
+        key_file.write_text(FALLBACK_EC_KEY, encoding='utf-8')
+        cert_file.write_text(FALLBACK_CERT, encoding='utf-8')
+
+# =========================== 证书指纹计算 ===========================
+def get_certificate_fingerprint(cert_file):
+    """计算证书的 SHA-256 指纹,优先用 openssl,不可用时用 cryptography 兜底"""
+    try:
+        result = subprocess.run(
+            ['openssl', 'x509', '-noout', '-fingerprint', '-sha256', '-in', str(cert_file)],
+            capture_output=True, text=True, timeout=3
+        )
+        if result.returncode == 0:
+            output = result.stdout.strip()
+            match = re.search(r'=(.+)$', output)
+            if match and match.group(1):
+                return match.group(1).upper()
+    except Exception:
+        pass
+    try:
+        with open(cert_file, 'rb') as f:
+            cert_data = f.read()
+        cert = x509.load_pem_x509_certificate(cert_data)
+        fingerprint = cert.fingerprint(hashes.SHA256())
+        return ':'.join(f'{b:02X}' for b in fingerprint)
+    except Exception as e:
+        log_error(f'Failed to calculate certificate fingerprint: {e}')
+        return ''
+
+# =========================== 创建运行文件夹 ===========================
+def create_directory():
+    if not SHOW_LOG:
+        print('\033c', end='')
+    FILE_PATH.mkdir(parents=True, exist_ok=True)
+    # log(f'{FILE_PATH} is ready')
+
+# =========================== 删除旧节点 ===========================
+def delete_nodes():
+    try:
+        if not UPLOAD_URL:
+            return
+        if not sub_path.exists():
+            return
+        content = sub_path.read_text(encoding='utf-8')
+        decoded = base64.b64decode(content).decode('utf-8')
+        nodes = [line for line in decoded.split('\n')
+                 if re.match(r'(vless|vmess|trojan|hysteria2|socks)://', line)]
+        if not nodes:
+            return
+        requests.post(f'{UPLOAD_URL}/api/delete-nodes',
+                       json={'nodes': nodes}, timeout=10)
+    except Exception:
+        pass
+
+# =========================== 清理历史文件 ===========================
+def cleanup_old_files():
+    """清理 FILE_PATH 目录下的所有文件, 保留 key.txt/cert.pem/private.key"""
+    # key.txt: Reality 密钥对, cert.pem/private.key: Hysteria2 证书, 删除后重启指纹变化导致节点失效
+    preserve_files = {FILE_PATH / 'key.txt', cert_path, key_path}
+    try:
+        for item in FILE_PATH.iterdir():
+            if item in preserve_files:
+                continue
+            try:
+                if item.is_file():
+                    item.unlink()
+                elif item.is_dir():
+                    shutil.rmtree(item)
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+# =========================== 判断系统架构 ===========================
+def get_system_architecture():
+    arch = platform.machine().lower()
+    if arch in ('arm', 'arm64', 'aarch64'):
+        return 'arm'
+    return 'amd'
+
+# =========================== 下载文件 ===========================
+def download_file(file_name, file_url):
+    file_path = FILE_PATH / file_name
+    try:
+        response = requests.get(file_url, stream=True, timeout=180)
+        response.raise_for_status()
+        with open(file_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+        log(f'Download {file_name} successfully')
+        return True
+    except Exception as e:
+        log_error(f'Download {file_name} failed: {e}')
+        try:
+            file_path.unlink()
+        except FileNotFoundError:
+            pass
+        return False
+
+def download_all_files():
+    """下载所需二进制文件"""
+    architecture = get_system_architecture()
+    if architecture == 'arm':
+        base_urls = ['https://arm64.oooen.com', 'https://arm64.ssss.nyc.mn']
+    else:
+        base_urls = ['https://amd64.oooen.com', 'https://amd64.ssss.nyc.mn']
+
+    downloads = [
+        {'name': web_name, 'path': 'web'},
+        {'name': bot_name, 'path': 'bot'},
+    ]
+
+    for item in downloads:
+        downloaded = False
+        for index, base_url in enumerate(base_urls):
+            url = f'{base_url}/{item["path"]}'
+            if download_file(item['name'], url):
+                downloaded = True
+                break
+            if index + 1 < len(base_urls):
+                log(f'Retrying {item["name"]} from backup source')
+        if not downloaded:
+            log_error(f'Error downloading {item["name"]}: all sources failed')
+
+    # 下载安装 komari agent (GitHub 官方 releases)
+    if KOMARI_SERVER and KOMARI_TOKEN:
+        if architecture == 'arm':
+            komari_urls = [
+                'https://github.com/komari-monitor/komari-agent/releases/download/1.5.10/komari-agent-linux-arm64',
+            ]
+        else:
+            komari_urls = [
+                'https://github.com/komari-monitor/komari-agent/releases/download/1.5.10/komari-agent-linux-amd64',
+            ]
+        downloaded = False
+        for url in komari_urls:
+            if download_file(komari_name, url):
+                downloaded = True
+                break
+            log(f'Retrying {komari_name} from backup source')
+        if not downloaded:
+            log_error('Error downloading komari-agent: all sources failed')
+    else:
+        log('KOMARI variable is empty, skipping komari-agent')
+
+# =========================== 授权文件执行权限 ===========================
+def authorize_files(file_names):
+    for name in file_names:
+        file_path = FILE_PATH / name
+        if file_path.exists():
+            try:
+                os.chmod(str(file_path), 0o775)
+                log(f'Empowerment success for {name}: 775')
+            except Exception as e:
+                log_error(f'Empowerment failed for {name}: {e}')
+
+# =========================== Argo 隧道配置 ===========================
+def argo_type():
+    if not ARGO_AUTH or not ARGO_DOMAIN:
+        log('ARGO_DOMAIN or ARGO_AUTH variable is empty, use quick tunnels')
+        return
+
+    if 'TunnelSecret' in ARGO_AUTH:
+        (FILE_PATH / 'tunnel.json').write_text(ARGO_AUTH, encoding='utf-8')
+        tunnel_id = ARGO_AUTH.split('"')[11]
+        tunnel_yaml = f"""
+tunnel: {tunnel_id}
+credentials-file: {FILE_PATH / 'tunnel.json'}
+protocol: http2
+
+ingress:
+  - hostname: {ARGO_DOMAIN}
+    service: http://localhost:{ARGO_PORT}
+    originRequest:
+      noTLSVerify: true
+  - service: http_status:404
+"""
+        (FILE_PATH / 'tunnel.yml').write_text(tunnel_yaml, encoding='utf-8')
+    else:
+        log(f'Using token connect to tunnel, please set {ARGO_PORT} in cloudflare')
+
+# =========================== Xray 配置生成 ===========================
+def generate_xray_config():
+    config = {
+        "log": {
+            "access": "/dev/null",
+            "error": "/dev/null",
+            "loglevel": "none"
+        },
+        "inbounds": [
+            {
+                "tag": "vless-fallback-in",
+                "listen": "::",
+                "port": ARGO_PORT,
+                "protocol": "vless",
+                "settings": {
+                    "clients": [{"id": UUID, "flow": "xtls-rprx-vision"}],
+                    "decryption": "none",
+                    "fallbacks": [
+                        {"dest": 51001},
+                        {"path": "/vless-argo", "dest": 51002},
+                        {"path": "/vmess-argo", "dest": 51003},
+                        {"path": "/trojan-argo", "dest": 51004}
+                    ]
+                },
+                "streamSettings": {"network": "tcp"}
+            },
+            {
+                "tag": "vless-tcp-in",
+                "port": 51001,
+                "listen": "127.0.0.1",
+                "protocol": "vless",
+                "settings": {
+                    "clients": [{"id": UUID}],
+                    "decryption": "none"
+                },
+                "streamSettings": {"network": "tcp", "security": "none"}
+            },
+            {
+                "tag": "vless-ws-in",
+                "port": 51002,
+                "listen": "127.0.0.1",
+                "protocol": "vless",
+                "settings": {
+                    "clients": [{"id": UUID, "level": 0}],
+                    "decryption": "none"
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "security": "none",
+                    "wsSettings": {"path": "/vless-argo"}
+                },
+                "sniffing": {
+                    "enabled": True,
+                    "destOverride": ["http", "tls", "quic"],
+                    "metadataOnly": False
+                }
+            },
+            {
+                "tag": "vmess-ws-in",
+                "port": 51003,
+                "listen": "127.0.0.1",
+                "protocol": "vmess",
+                "settings": {
+                    "clients": [{"id": UUID, "alterId": 0}]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {"path": "/vmess-argo"}
+                },
+                "sniffing": {
+                    "enabled": True,
+                    "destOverride": ["http", "tls", "quic"],
+                    "metadataOnly": False
+                }
+            },
+            {
+                "tag": "trojan-ws-in",
+                "port": 51004,
+                "listen": "127.0.0.1",
+                "protocol": "trojan",
+                "settings": {
+                    "clients": [{"password": UUID}]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "security": "none",
+                    "wsSettings": {"path": "/trojan-argo"}
+                },
+                "sniffing": {
+                    "enabled": True,
+                    "destOverride": ["http", "tls", "quic"],
+                    "metadataOnly": False
+                }
+            }
+        ],
+        "dns": {"servers": ["https+local://8.8.8.8/dns-query"]},
+        "outbounds": [
+            {"protocol": "freedom", "tag": "direct"},
+            {"protocol": "blackhole", "tag": "block"}
+        ]
+    }
+
+    # VLESS Reality 配置
+    if is_valid_port(REALITY_PORT):
+        config["inbounds"].append({
+            "tag": "vless-reality-in",
+            "listen": "::",
+            "port": int(REALITY_PORT),
+            "protocol": "vless",
+            "settings": {
+                "clients": [{"id": UUID, "flow": "xtls-rprx-vision"}],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "raw",
+                "security": "reality",
+                "realitySettings": {
+                    "show": False,
+                    "dest": "www.iij.ad.jp:443",
+                    "xver": 0,
+                    "serverNames": ["www.iij.ad.jp"],
+                    "privateKey": private_key,
+                    "shortIds": [""]
+                }
+            }
+        })
+
+    # Hysteria2 配置
+    if is_valid_port(HY2_PORT):
+        config["inbounds"].append({
+            "tag": "hysteria-in",
+            "listen": "::",
+            "port": int(HY2_PORT),
+            "protocol": "hysteria",
+            "settings": {
+                "version": 2,
+                "clients": [{"auth": UUID}]
+            },
+            "streamSettings": {
+                "network": "hysteria",
+                "hysteriaSettings": {
+                    "version": 2,
+                    "masquerade": {"type": "proxy", "url": "https://bing.com"}
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "alpn": ["h3"],
+                    "certificates": [
+                        {
+                            "certificateFile": str(cert_path),
+                            "keyFile": str(key_path)
+                        }
+                    ]
+                }
+            }
+        })
+
+    # SOCKS5 配置
+    if is_valid_port(S5_PORT):
+        config["inbounds"].append({
+            "tag": "s5-in",
+            "listen": "::",
+            "port": int(S5_PORT),
+            "protocol": "socks",
+            "settings": {
+                "auth": "password",
+                "accounts": [{"user": UUID[:8], "pass": UUID[-12:]}],
+                "udp": True
+            }
+        })
+
+    config_path.write_text(json.dumps(config, indent=2), encoding='utf-8')
+
+# =========================== 执行命令 ===========================
+def exec_cmd(command):
+    try:
+        process = subprocess.Popen(
+            command, shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        stdout, stderr = process.communicate()
+        return stdout + stderr
+    except Exception as e:
+        log_error(f'Error executing command: {e}')
+        return str(e)
+
+# =========================== 下载并运行 ===========================
+def download_files_and_run():
+    architecture = get_system_architecture()
+
+    # 下载文件
+    download_all_files()
+
+    # 授权执行权限
+    files_to_authorize = [web_name, bot_name]
+    if KOMARI_SERVER and KOMARI_TOKEN:
+        files_to_authorize.append(komari_name)
+    authorize_files(files_to_authorize)
+
+    # 运行 komari
+    if KOMARI_SERVER and KOMARI_TOKEN:
+        command = f'nohup {komari_path} -e {KOMARI_SERVER} --token {KOMARI_TOKEN} --disable-auto-update >/dev/null 2>&1 &'
+        try:
+            exec_cmd(command)
+            log(f'{komari_name} is running')
+            time.sleep(1)
+        except Exception as e:
+            log_error(f'komari running error: {e}')
+    else:
+        log('KOMARI variable is empty, skipping running')
+
+    # 运行 Xray
+    command = f'nohup {web_path} -c {config_path} >/dev/null 2>&1 &'
+    try:
+        exec_cmd(command)
+        log(f'{web_name} is running')
+        time.sleep(1)
+    except Exception as e:
+        log_error(f'web running error: {e}')
+
+    # 运行 Cloudflared
+    if bot_path.exists():
+        if re.match(r'^[A-Z0-9a-z=]{120,250}$', ARGO_AUTH):
+            args = f"tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token {ARGO_AUTH}"
+        elif "TunnelSecret" in ARGO_AUTH:
+            args = f"tunnel --edge-ip-version auto --config {FILE_PATH / 'tunnel.yml'} run"
+        else:
+            args = f"tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile {boot_log_path} --loglevel info --url http://localhost:{ARGO_PORT}"
+
+        try:
+            exec_cmd(f"nohup {bot_path} {args} >/dev/null 2>&1 &")
+            log(f'{bot_name} is running')
+            time.sleep(2)
+        except Exception as e:
+            log_error(f'Error executing command: {e}')
+
+    time.sleep(5)
+
+# =========================== 提取隧道域名 ===========================
+def extract_domains():
+    argo_domain = None
+
+    if ARGO_AUTH and ARGO_DOMAIN:
+        argo_domain = ARGO_DOMAIN
+        log(f'ARGO_DOMAIN: {argo_domain}')
+        generate_links(argo_domain)
+    else:
+        try:
+            if boot_log_path.exists():
+                file_content = boot_log_path.read_text(encoding='utf-8')
+                lines = file_content.split('\n')
+                argo_domains = []
+
+                for line in lines:
+                    domain_match = re.search(r'https?://([^ ]*trycloudflare\.com)/?', line)
+                    if domain_match:
+                        domain = domain_match.group(1)
+                        argo_domains.append(domain)
+
+                if argo_domains:
+                    argo_domain = argo_domains[0]
+                    log(f'ArgoDomain: {argo_domain}')
+                    generate_links(argo_domain)
+                else:
+                    log('ArgoDomain not found, re-running bot to obtain ArgoDomain')
+                    try:
+                        boot_log_path.unlink()
+                    except FileNotFoundError:
+                        pass
+
+                    try:
+                        exec_cmd(f'pkill -f "[{bot_name[0]}]{bot_name[1:]}" > /dev/null 2>&1')
+                    except Exception:
+                        pass
+
+                    time.sleep(3)
+                    args = f'tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile {boot_log_path} --loglevel info --url http://localhost:{ARGO_PORT}'
+                    exec_cmd(f'nohup {bot_path} {args} >/dev/null 2>&1 &')
+                    log(f'{bot_name} is running')
+                    time.sleep(6)
+                    extract_domains()
+        except Exception as e:
+            log_error(f'Error reading boot.log: {e}')
+
+# =========================== 获取 ISP 信息 ===========================
+def get_meta_info():
+    try:
+        resp = requests.get('https://api.ip.sb/geoip',
+                            headers={'User-Agent': 'Mozilla/5.0'}, timeout=3)
+        data = resp.json()
+        if data.get('country_code') and data.get('isp'):
+            return f"{data['country_code']}-{data['isp']}".replace(' ', '_')
+    except Exception:
+        pass
+    try:
+        resp = requests.get('http://ip-api.com/json',
+                            headers={'User-Agent': 'Mozilla/5.0'}, timeout=3)
+        data = resp.json()
+        if data.get('status') == 'success' and data.get('countryCode') and data.get('org'):
+            return f"{data['countryCode']}-{data['org']}".replace(' ', '_')
+    except Exception:
+        pass
+    return 'Unknown'
+
+# =========================== 获取服务器公网 IP ===========================
+def get_server_ip():
+    server_ip = ''
+    try:
+        resp = requests.get('http://ipv4.ip.sb', timeout=3)
+        server_ip = resp.text.strip()
+    except Exception:
+        try:
+            result = subprocess.run(['curl', '-sm', '3', 'ipv4.ip.sb'],
+                                    capture_output=True, text=True, timeout=5)
+            server_ip = result.stdout.strip()
+        except Exception:
+            try:
+                resp = requests.get('http://ipv6.ip.sb', timeout=3)
+                server_ip = f'[{resp.text.strip()}]'
+            except Exception:
+                try:
+                    result = subprocess.run(['curl', '-sm', '3', 'ipv6.ip.sb'],
+                                            capture_output=True, text=True, timeout=5)
+                    server_ip = f'[{result.stdout.strip()}]'
+                except Exception as e:
+                    log_error(f'Failed to get IP address: {e}')
+    return server_ip
+
+# =========================== 生成节点链接 ===========================
+def generate_links(argo_domain):
+    global sub_txt_content
+
+    isp = get_meta_info()
+    node_name = f'{NAME}-{isp}' if NAME else isp
+    server_ip = get_server_ip()
+
+    time.sleep(2)
+
+    sub_txt = ''
+
+    # Argo 节点 (VLESS / VMess / Trojan)
+    if argo_domain:
+        sub_txt += f'\nvless://{UUID}@{CFIP}:{CFPORT}?encryption=none&security=tls&sni={argo_domain}&fp=firefox&type=ws&host={argo_domain}&path=%2Fvless-argo%3Fed%3D2560#{node_name}'
+
+        vmess_obj = {
+            'v': '2', 'ps': node_name, 'add': CFIP, 'port': CFPORT,
+            'id': UUID, 'aid': '0', 'scy': 'auto', 'net': 'ws',
+            'type': 'none', 'host': argo_domain, 'path': '/vmess-argo?ed=2560',
+            'tls': 'tls', 'sni': argo_domain, 'alpn': '', 'fp': 'firefox'
+        }
+        vmess_b64 = base64.b64encode(json.dumps(vmess_obj, separators=(',', ':')).encode()).decode()
+        sub_txt += f'\nvmess://{vmess_b64}'
+
+        sub_txt += f'\ntrojan://{UUID}@{CFIP}:{CFPORT}?security=tls&sni={argo_domain}&fp=firefox&type=ws&host={argo_domain}&path=%2Ftrojan-argo%3Fed%3D2560#{node_name}'
+
+    # Hysteria2 节点
+    if is_valid_port(HY2_PORT):
+        fingerprint = get_certificate_fingerprint(cert_path)
+        fingerprint_param = f'&pinSHA256={quote(fingerprint, safe="")}' if fingerprint else ''
+        sub_txt += f'\nhysteria2://{UUID}@{server_ip}:{HY2_PORT}/?sni=www.bing.com&insecure=0&alpn=h3&obfs=none{fingerprint_param}#{node_name}'
+
+    # Reality 节点
+    if is_valid_port(REALITY_PORT):
+        sub_txt += f'\nvless://{UUID}@{server_ip}:{REALITY_PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.iij.ad.jp&fp=firefox&pbk={public_key}&type=tcp&headerType=none#{node_name}'
+
+    # SOCKS5 节点
+    if is_valid_port(S5_PORT):
+        s5_auth = base64.b64encode(f'{UUID[:8]}:{UUID[-12:]}'.encode()).decode()
+        sub_txt += f'\nsocks://{s5_auth}@{server_ip}:{S5_PORT}#{node_name}'
+
+    sub_txt_b64 = base64.b64encode(sub_txt.encode()).decode()
+    if SHOW_LOG:
+        print(f'\033[32m{sub_txt_b64}\033[0m')
+        print(f'\033[35mLogs will be deleted in 90 seconds, you can copy the above nodes\033[0m')
+
+    sub_path.write_text(sub_txt_b64, encoding='utf-8')
+    list_path.write_text(sub_txt, encoding='utf-8')
+    log(f'{FILE_PATH}/sub.txt saved successfully')
+
+    sub_txt_content = sub_txt_b64
+    return sub_txt
+
+# =========================== Telegram 推送 ===========================
+def send_telegram():
+    if not BOT_TOKEN or not CHAT_ID:
+        log('TG variables is empty, Skipping push nodes to TG')
+        return
+    try:
+        message = sub_path.read_text(encoding='utf-8')
+        url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
+        escaped_name = re.sub(r'[_*\[\]()~`>#+=|{}.!-]', r'\\\g<0>', NAME)
+        params = {
+            'chat_id': CHAT_ID,
+            'text': f'**{escaped_name}节点推送通知**\n```{message}```',
+            'parse_mode': 'MarkdownV2'
+        }
+        requests.post(url, params=params, timeout=10)
+        log('Telegram message sent successfully')
+    except Exception as e:
+        log_error(f'Failed to send Telegram message: {e}')
+
+# =========================== 上传节点到订阅器 ===========================
+def upload_nodes():
+    if UPLOAD_URL and PROJECT_URL:
+        subscription_url = f'{PROJECT_URL}/{SUB_PATH}'
+        try:
+            resp = requests.post(f'{UPLOAD_URL}/api/add-subscriptions',
+                                 json={'subscription': [subscription_url]},
+                                 timeout=10)
+            if resp.status_code == 200:
+                log('Subscription uploaded successfully')
+        except Exception:
+            pass
+    elif UPLOAD_URL:
+        if not list_path.exists():
+            return
+        content = list_path.read_text(encoding='utf-8')
+        nodes = [line for line in content.split('\n')
+                 if re.match(r'(vless|vmess|trojan|hysteria2|socks)://', line)]
+        if not nodes:
+            return
+        try:
+            resp = requests.post(f'{UPLOAD_URL}/api/add-nodes',
+                                 json={'nodes': nodes},
+                                 timeout=10)
+            if resp.status_code == 200:
+                log('Nodes uploaded successfully')
+        except Exception:
+            pass
+
+# =========================== 自动保活 ===========================
+def add_visit_task():
+    if not AUTO_ACCESS or not PROJECT_URL:
+        log('Skipping adding automatic access task')
+        return
+    try:
+        requests.post('https://oooo.serv00.net/add-url',
+                      json={'url': PROJECT_URL},
+                      headers={'Content-Type': 'application/json'},
+                      timeout=10)
+        log('automatic access task added successfully')
+    except Exception as e:
+        log_error(f'Add URL failed: {e}')
+
+# =========================== 文件清理 ===========================
+def clean_files():
+    def cleanup():
+        time.sleep(90)
+        # 注意: key.txt/cert.pem/private.key 不能删除, 删除后重启会导致 Reality 公钥和 Hysteria2 证书指纹变化, 节点失效
+        files_to_delete = [boot_log_path, config_path, list_path,
+                           web_path, bot_path,
+                           FILE_PATH / 'tunnel.json', FILE_PATH / 'tunnel.yml']
+        if KOMARI_SERVER and KOMARI_TOKEN:
+            files_to_delete.append(komari_path)
+
+        for f in files_to_delete:
+            try:
+                f.unlink()
+            except FileNotFoundError:
+                pass
+
+        if SHOW_LOG:
+            os.system('clear' if os.name == 'posix' else 'cls')
+        always_log('App is running')
+        log('Thank you for using this script, enjoy!')
+
+    t = threading.Thread(target=cleanup, daemon=True)
+    t.start()
+
+# =========================== HTTP 服务 ===========================
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+
+        if path == f'/{SUB_PATH}':
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/plain; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(sub_txt_content.encode('utf-8'))
+            return
+
+        if path == '/':
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(
+                b'Hello world!<br><br>You can access /{SUB_PATH}(Default: /sub) get your nodes!')
+            return
+
+        self.send_response(404)
+        self.send_header('Content-Type', 'text/plain; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(b'Not Found')
+
+    def log_message(self, format, *args):
+        pass
+
+# =========================== 主流程 ===========================
+def start_server():
+    global sub_txt_content
+
+    # 1. 删除旧节点
+    delete_nodes()
+
+    # 2. 创建运行目录 + 清理文件
+    create_directory()
+    cleanup_old_files()
+
+    # 3. 生成 Argo 隧道配置
+    argo_type()
+
+    # 4. 生成 Reality 密钥对 (仅当 REALITY_PORT 开启才生成)
+    if is_valid_port(REALITY_PORT):
+        generate_or_load_keypair()
+
+    # 5. 生成 TLS 证书 (用于 Hysteria2)
+    if is_valid_port(HY2_PORT):
+        ensure_tls_certificates(cert_path, key_path)
+
+    # 6. 生成 Xray 配置
+    generate_xray_config()
+
+    # 7. 下载并运行文件
+    download_files_and_run()
+
+    # 8. 提取隧道域名并生成节点
+    extract_domains()
+
+    # 9. Telegram 推送 + 节点上传 + 自动保活
+    send_telegram()
+    upload_nodes()
+    add_visit_task()
+
+    # 10. 90秒后清理文件
+    clean_files()
+
+# =========================== 信号处理 ===========================
+def stop_all(signum=None, frame=None):
+    """优雅关闭所有服务"""
+    def shutdown():
+        log('\nShutting down...')
+        try:
+            exec_cmd(f'pkill -f "{web_name}" > /dev/null 2>&1')
+            exec_cmd(f'pkill -f "{bot_name}" > /dev/null 2>&1')
+            if KOMARI_SERVER and KOMARI_TOKEN:
+                exec_cmd(f'pkill -f "{komari_name}" > /dev/null 2>&1')
+        except Exception:
+            pass
+        time.sleep(1)
+        os._exit(0)
+
+    t = threading.Thread(target=shutdown, daemon=True)
+    t.start()
+
+# =========================== 入口 ===========================
+if __name__ == '__main__':
+    signal.signal(signal.SIGINT, stop_all)
+    signal.signal(signal.SIGTERM, stop_all)
+
+    # 启动 HTTP 服务 (主线程)
+    server = ThreadingHTTPServer(('0.0.0.0', PORT), RequestHandler)
+
+    always_log(f'server is running on {PORT}!')
+
+    # 在后台线程中启动主流程
+    t = threading.Thread(target=start_server, daemon=True)
+    t.start()
+
+    # 主线程阻塞在 HTTP 服务器上
+    server.serve_forever()
