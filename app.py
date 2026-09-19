@@ -900,7 +900,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.send_header('Content-Type', 'text/html; charset=utf-8')
             self.end_headers()
             self.wfile.write(
-                b'Hello world!<br><br>You can access /{SUB_PATH}(Default: /sub) get your nodes!')
+                b'Hello world!<br><brEnjoy your every day!')
             return
 
         self.send_response(404)
