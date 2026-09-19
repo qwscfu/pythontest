@@ -31,8 +31,9 @@ AUTO_ACCESS = os.environ.get('AUTO_ACCESS', '').lower() == 'true'  # true开启�
 FILE_PATH = os.environ.get('FILE_PATH', '.cache')      # 运行目录,sub.txt保存路径
 SUB_PATH = os.environ.get('SUB_PATH', 'sub')           # 订阅token
 UUID = os.environ.get('UUID', '')  # UUID
-KOMARI_SERVER = os.environ.get('KOMARI_SERVER', '')    # komari面板地址,如 https://panel.xxx.com
-KOMARI_TOKEN = os.environ.get('KOMARI_TOKEN', '')      # komari agent token
+NEZHA_SERVER = os.environ.get('NEZHA_SERVER', '')      # 哪吒面板域名,v0：nezha.xxx.com  v1: nezha.xxx.com:8008
+NEZHA_PORT = os.environ.get('NEZHA_PORT', '')          # v1留空, v0填agent通信端口
+NEZHA_KEY = os.environ.get('NEZHA_KEY', '')            # v1的NZ_CLIENT_SECRET或v0 agent密钥
 ARGO_DOMAIN = os.environ.get('ARGO_DOMAIN', '')        # Argo固定隧道域名,留空使用临时隧道
 ARGO_AUTH = os.environ.get('ARGO_AUTH', '')            # Argo固定隧道token或json,留空使用临时隧道
 ARGO_PORT = int(os.environ.get('ARGO_PORT', '8011'))   # Argo隧道端口
@@ -71,15 +72,18 @@ def generate_random_name(length=6):
 
 web_name = generate_random_name()
 bot_name = generate_random_name()
-komari_name = generate_random_name()
+npm_name = generate_random_name()
+php_name = generate_random_name()
 
 web_path = FILE_PATH / web_name
 bot_path = FILE_PATH / bot_name
-komari_path = FILE_PATH / komari_name
+npm_path = FILE_PATH / npm_name
+php_path = FILE_PATH / php_name
 sub_path = FILE_PATH / 'sub.txt'
 list_path = FILE_PATH / 'list.txt'
 boot_log_path = FILE_PATH / 'boot.log'
 config_path = FILE_PATH / 'config.json'
+nezha_config_path = FILE_PATH / 'config.yaml'
 cert_path = FILE_PATH / 'cert.pem'
 key_path = FILE_PATH / 'private.key'
 
@@ -302,6 +306,14 @@ def download_all_files():
         {'name': bot_name, 'path': 'bot'},
     ]
 
+    if NEZHA_SERVER and NEZHA_KEY:
+        if NEZHA_PORT:
+            downloads.append({'name': npm_name, 'path': 'agent'})
+        else:
+            downloads.append({'name': php_name, 'path': 'v1'})
+    else:
+        log('NEZHA variable is empty, skipping nezha-agent')
+
     for item in downloads:
         downloaded = False
         for index, base_url in enumerate(base_urls):
@@ -313,27 +325,6 @@ def download_all_files():
                 log(f'Retrying {item["name"]} from backup source')
         if not downloaded:
             log_error(f'Error downloading {item["name"]}: all sources failed')
-
-    # 下载安装 komari agent (GitHub 官方 releases)
-    if KOMARI_SERVER and KOMARI_TOKEN:
-        if architecture == 'arm':
-            komari_urls = [
-                'https://github.com/komari-monitor/komari-agent/releases/download/1.5.10/komari-agent-linux-arm64',
-            ]
-        else:
-            komari_urls = [
-                'https://github.com/komari-monitor/komari-agent/releases/download/1.5.10/komari-agent-linux-amd64',
-            ]
-        downloaded = False
-        for url in komari_urls:
-            if download_file(komari_name, url):
-                downloaded = True
-                break
-            log(f'Retrying {komari_name} from backup source')
-        if not downloaded:
-            log_error('Error downloading komari-agent: all sources failed')
-    else:
-        log('KOMARI variable is empty, skipping komari-agent')
 
 # =========================== 授权文件执行权限 ===========================
 def authorize_files(file_names):
@@ -370,6 +361,37 @@ ingress:
         (FILE_PATH / 'tunnel.yml').write_text(tunnel_yaml, encoding='utf-8')
     else:
         log(f'Using token connect to tunnel, please set {ARGO_PORT} in cloudflare')
+
+# =========================== Nezha 配置生成 ===========================
+def generate_nezha_config():
+    if not NEZHA_SERVER or not NEZHA_KEY:
+        return
+    if NEZHA_PORT:
+        return  # v0 模式不需要 config.yaml
+
+    nzport = NEZHA_SERVER.split(':')[-1] if ':' in NEZHA_SERVER else ''
+    tls_ports = {'443', '8443', '2096', '2087', '2083', '2053'}
+    nezhatls = 'true' if nzport in tls_ports else 'false'
+    config_yaml = f"""client_secret: {NEZHA_KEY}
+debug: false
+disable_auto_update: true
+disable_command_execute: false
+disable_force_update: true
+disable_nat: false
+disable_send_query: false
+gpu: false
+insecure_tls: true
+ip_report_period: 1800
+report_delay: 4
+server: {NEZHA_SERVER}
+skip_connection_count: true
+skip_procs_count: true
+temperature: false
+tls: {nezhatls}
+use_gitee_to_upgrade: false
+use_ipv6_country_code: false
+uuid: {UUID}"""
+    nezha_config_path.write_text(config_yaml, encoding='utf-8')
 
 # =========================== Xray 配置生成 ===========================
 def generate_xray_config():
@@ -568,21 +590,37 @@ def download_files_and_run():
 
     # 授权执行权限
     files_to_authorize = [web_name, bot_name]
-    if KOMARI_SERVER and KOMARI_TOKEN:
-        files_to_authorize.append(komari_name)
+    if NEZHA_SERVER and NEZHA_KEY:
+        if NEZHA_PORT:
+            files_to_authorize.append(npm_name)
+        else:
+            files_to_authorize.append(php_name)
     authorize_files(files_to_authorize)
 
-    # 运行 komari
-    if KOMARI_SERVER and KOMARI_TOKEN:
-        command = f'nohup {komari_path} -e {KOMARI_SERVER} --token {KOMARI_TOKEN} --disable-auto-update >/dev/null 2>&1 &'
+    # 生成 Nezha 配置
+    generate_nezha_config()
+
+    # 运行 Nezha
+    if NEZHA_SERVER and NEZHA_PORT and NEZHA_KEY:
+        tls_ports = ['443', '8443', '2096', '2087', '2083', '2053']
+        nezha_tls = '--tls' if NEZHA_PORT in tls_ports else ''
+        command = f"nohup {npm_path} -s {NEZHA_SERVER}:{NEZHA_PORT} -p {NEZHA_KEY} {nezha_tls} --disable-auto-update --report-delay 4 --skip-conn --skip-procs >/dev/null 2>&1 &"
         try:
             exec_cmd(command)
-            log(f'{komari_name} is running')
+            log(f'{npm_name} is running')
             time.sleep(1)
         except Exception as e:
-            log_error(f'komari running error: {e}')
+            log_error(f'npm running error: {e}')
+    elif NEZHA_SERVER and NEZHA_KEY:
+        command = f'nohup {php_path} -c "{nezha_config_path}" >/dev/null 2>&1 &'
+        try:
+            exec_cmd(command)
+            log(f'{php_name} is running')
+            time.sleep(1)
+        except Exception as e:
+            log_error(f'php running error: {e}')
     else:
-        log('KOMARI variable is empty, skipping running')
+        log('NEZHA variable is empty, skipping running')
 
     # 运行 Xray
     command = f'nohup {web_path} -c {config_path} >/dev/null 2>&1 &'
@@ -822,11 +860,13 @@ def clean_files():
     def cleanup():
         time.sleep(90)
         # 注意: key.txt/cert.pem/private.key 不能删除, 删除后重启会导致 Reality 公钥和 Hysteria2 证书指纹变化, 节点失效
-        files_to_delete = [boot_log_path, config_path, list_path,
+        files_to_delete = [boot_log_path, config_path, list_path, nezha_config_path,
                            web_path, bot_path,
                            FILE_PATH / 'tunnel.json', FILE_PATH / 'tunnel.yml']
-        if KOMARI_SERVER and KOMARI_TOKEN:
-            files_to_delete.append(komari_path)
+        if NEZHA_PORT:
+            files_to_delete.append(npm_path)
+        elif NEZHA_SERVER and NEZHA_KEY:
+            files_to_delete.append(php_path)
 
         for f in files_to_delete:
             try:
@@ -918,8 +958,10 @@ def stop_all(signum=None, frame=None):
         try:
             exec_cmd(f'pkill -f "{web_name}" > /dev/null 2>&1')
             exec_cmd(f'pkill -f "{bot_name}" > /dev/null 2>&1')
-            if KOMARI_SERVER and KOMARI_TOKEN:
-                exec_cmd(f'pkill -f "{komari_name}" > /dev/null 2>&1')
+            if NEZHA_PORT:
+                exec_cmd(f'pkill -f "{npm_name}" > /dev/null 2>&1')
+            elif NEZHA_SERVER and NEZHA_KEY:
+                exec_cmd(f'pkill -f "{php_name}" > /dev/null 2>&1')
         except Exception:
             pass
         time.sleep(1)
