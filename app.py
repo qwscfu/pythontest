@@ -30,9 +30,9 @@ PROJECT_URL = os.environ.get('PROJECT_URL', '')        # 项目url,用于自动�
 AUTO_ACCESS = os.environ.get('AUTO_ACCESS', '').lower() == 'true'  # true开启自动保活,默认关闭
 FILE_PATH = os.environ.get('FILE_PATH', '.cache')      # 运行目录,sub.txt保存路径
 SUB_PATH = os.environ.get('SUB_PATH', 'sub')           # 订阅token
-UUID = os.environ.get('UUID', 'b2634cb1-f3ac-4633-a111-216430c38e49')  # UUID
-KOMARI_SERVER = os.environ.get('KOMARI_SERVER', 'https://v.cws.kdns.fr')    # komari面板地址,如 https://panel.xxx.com
-KOMARI_TOKEN = os.environ.get('KOMARI_TOKEN', 'KI40YWOoFbPwZL9AapdsGH')      # komari agent token
+UUID = os.environ.get('UUID', '5a4cbab2-ca19-495a-a50f-7f373b81d39e')  # UUID
+KOMARI_SERVER = os.environ.get('KOMARI_SERVER', '')    # komari面板地址,如 https://panel.xxx.com
+KOMARI_TOKEN = os.environ.get('KOMARI_TOKEN', '')      # komari agent token
 ARGO_DOMAIN = os.environ.get('ARGO_DOMAIN', '')        # Argo固定隧道域名,留空使用临时隧道
 ARGO_AUTH = os.environ.get('ARGO_AUTH', '')            # Argo固定隧道token或json,留空使用临时隧道
 ARGO_PORT = int(os.environ.get('ARGO_PORT', '8011'))   # Argo隧道端口
@@ -42,8 +42,8 @@ REALITY_PORT = os.environ.get('REALITY_PORT', '')      # reality端口,留空不
 CFIP = os.environ.get('CFIP', 'cf.877774.xyz')         # 优选ip或域名
 CFPORT = int(os.environ.get('CFPORT', '443'))          # 优选端口
 NAME = os.environ.get('NAME', '')                      # 节点名称
-CHAT_ID = os.environ.get('CHAT_ID', '673392065')                # Telegram chat_id
-BOT_TOKEN = os.environ.get('BOT_TOKEN', '8925915994:AAGLsnma8wX1jsbkF3uotm-bTCUnQIXe1K0')            # Telegram bot_token
+CHAT_ID = os.environ.get('CHAT_ID', '')                # Telegram chat_id
+BOT_TOKEN = os.environ.get('BOT_TOKEN', '')            # Telegram bot_token
 PORT = int(os.environ.get('PORT') or '3000')           # http订阅端口
 SHOW_LOG = os.environ.get('SHOW_LOG', 'disable').lower() not in ('false', 'disable', 'no')  # 是否显示日志,默认不显示，no/false/disable 不显示
 
